@@ -386,6 +386,26 @@ export class TranslationServices {
                   ? "annotationComment"
                   : "annotationText"
               ] = text;
+
+              // Auto tag
+              const enableAutoTag = getPref(
+                "enableAutoTagAnnotation",
+              ) as boolean;
+              if (enableAutoTag) {
+                const tagContent = getPref("annotationTagContent") as string;
+                if (tagContent && tagContent.trim()) {
+                  const tag = tagContent.trim();
+                  // Check if the tag already exists
+                  const existingTags = item.getTags();
+                  const tagExists = existingTags.some(
+                    (existingTag) => existingTag.tag === tag,
+                  );
+
+                  if (!tagExists) {
+                    item.addTag(tag);
+                  }
+                }
+              }
               item.saveTx();
             }
           }

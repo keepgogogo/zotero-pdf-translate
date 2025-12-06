@@ -263,6 +263,12 @@ function buildPrefsPane() {
           ztoolkit.ExtraField.setExtraField(item, "abstractTranslation", "");
         });
     });
+
+  doc
+    .querySelector(`#${makeId("enableAutoTagAnnotation")}`)
+    ?.addEventListener("command", (e: Event) => {
+      onPrefsEvents("setEnableAutoTagAnnotation");
+    });
 }
 
 function updatePrefsPaneDefault() {
@@ -272,6 +278,7 @@ function updatePrefsPaneDefault() {
   onPrefsEvents("setUseWordService", false);
   onPrefsEvents("setSentenceSecret", false);
   onPrefsEvents("setWordSecret", false);
+  onPrefsEvents("setEnableAutoTagAnnotation", false);
 }
 
 function onPrefsEvents(type: string, fromElement: boolean = true) {
@@ -340,6 +347,19 @@ function onPrefsEvents(type: string, fromElement: boolean = true) {
         if (!hidden) {
           onPrefsEvents("setShowPlayBtn", fromElement);
         }
+      }
+      break;
+    case "setEnableAutoTagAnnotation":
+      {
+        const elemValue = fromElement
+          ? (
+              doc.querySelector(
+                `#${makeId("enableAutoTagAnnotation")}`,
+              ) as XUL.Checkbox
+            ).checked
+          : (getPref("enableAutoTagAnnotation") as boolean);
+        const hidden = !elemValue;
+        setDisabled("enable-auto-tag-annotation", hidden);
       }
       break;
     case "setSentenceService":

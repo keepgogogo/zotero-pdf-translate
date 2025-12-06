@@ -18,7 +18,10 @@ pref-basic-enableNote =
     .label = Mostra "Aggiungi traduzione alla nota" nel popup
 pref-basic-enableNoteReplaceMode =
     .label = Sostituisci il testo d'origine quando aggiungi traduzione alla nota
-
+pref-basic-enableAutoTagAnnotation =
+    .label = Tagga automaticamente l'annotazione dopo la traduzione
+pref-basic-annotationTagContent =
+    .value = Tag
 pref-audio-autoPlay =
     .label = Riproduci automaticamente la pronuncia
 pref-audio-showPlayBtn =

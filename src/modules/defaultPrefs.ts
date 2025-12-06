@@ -92,4 +92,8 @@ export function setDefaultPrefSettings() {
       setPref(prefKey, String(value));
     }
   });
+
+  if (!getPref("annotationTagContent")) {
+    setPref("annotationTagContent", isZhCN ? "翻译" : "Translation");
+  }
 }
