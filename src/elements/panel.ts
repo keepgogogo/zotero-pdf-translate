@@ -344,6 +344,26 @@ export class TranslatorPanel extends PluginCEBase {
 
   destroy(): void {}
 
+  /**
+   * Filter unconfigured services from the dropdown menu.
+   * Hides services that require API keys but haven't been configured.
+   */
+  _filterUnconfiguredServices() {
+    const menuPopup = this._queryID("services")?.querySelector("menupopup");
+    if (!menuPopup) return;
+
+    const menuItems = menuPopup.querySelectorAll("menuitem");
+    const hideUnconfigured = getPref("hideUnconfiguredServices") as boolean;
+    const unconfiguredIds = hideUnconfigured
+      ? services.getUnconfiguredServiceIds()
+      : null;
+
+    menuItems.forEach((item) => {
+      const serviceId = item.getAttribute("value");
+      (item as HTMLElement).hidden = !!unconfiguredIds?.has(serviceId || "");
+    });
+  }
+
   render() {
     const updateHidden = (type: string, pref: string) => {
       const elem = this._queryID(type) as XUL.Box;
@@ -380,6 +400,9 @@ export class TranslatorPanel extends PluginCEBase {
     updateHidden("auto-container", "showSidebarSettings");
     updateHidden("concat-container", "showSidebarConcat");
     updateHidden("copy-container", "showSidebarCopy");
+
+    // Filter unconfigured services from dropdown if preference is enabled
+    this._filterUnconfiguredServices();
 
     setValue("services", getPref("translateSource") as string);
 
