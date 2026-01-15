@@ -30,6 +30,7 @@ service-azuregpt=AzureGPT
 service-gemini=Gemini
 service-qwenmt=Qwen-MT
 service-claude=Claude
+service-zhipuai=智谱清言
 service-haici=海词
 service-bing=必应
 service-pot=Pot
@@ -105,6 +106,13 @@ service-claude-dialog-temperature=温度
 service-claude-dialog-prompt=提示词
 service-claude-dialog-stream=流式输出
 service-claude-dialog-maxTokens=最大输出长度
+
+service-zhipuai-dialog-endPoint=接口
+service-zhipuai-dialog-model=模型
+service-zhipuai-dialog-temperature=温度
+service-zhipuai-dialog-prompt=提示词
+service-zhipuai-dialog-stream=流式输出
+service-zhipuai-dialog-maxTokens=最大输出长度
 
 service-cnki-settings=设置
 service-cnki-dialog-regex=CNKI广告移除正则表达式

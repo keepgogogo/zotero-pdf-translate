@@ -30,6 +30,7 @@ service-azuregpt=AzureGPT
 service-gemini=Gemini
 service-qwenmt=Qwen-MT
 service-claude=Claude
+service-zhipuai=ZhipuAI
 service-haici=Haici
 service-bing=Bing
 service-pot=Pot
@@ -109,6 +110,13 @@ service-claude-dialog-maxTokens=Max Tokens
 service-cnki-settings=Settings
 service-cnki-dialog-regex=CNKI Addvertisements Regex
 service-cnki-dialog-split=Automatically split translation for more than 800 characters
+
+service-zhipuai-dialog-endPoint=EndPoint
+service-zhipuai-dialog-model=Model
+service-zhipuai-dialog-temperature=Temp
+service-zhipuai-dialog-prompt=Prompt
+service-zhipuai-dialog-stream=Stream
+service-zhipuai-dialog-maxTokens=Max Tokens
 
 service-aliyun-dialog-action=Action
 service-aliyun-dialog-scene=Scene

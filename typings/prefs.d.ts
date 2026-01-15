@@ -102,6 +102,12 @@ declare namespace _ZoteroTypes {
       "youdaozhiyun.domain": string;
       "youdaozhiyunllm.model": string;
       "youdaozhiyunllm.stream": boolean;
+      "zhipuai.endPoint": string;
+      "zhipuai.model": string;
+      "zhipuai.temperature": string;
+      "zhipuai.prompt": string;
+      "zhipuai.maxTokens": string;
+      "zhipuai.stream": boolean;
       "nllb.model": string;
       "nllb.apiendpoint": string;
       "nllb.apistream": boolean;

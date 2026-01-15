@@ -45,6 +45,7 @@ import { YoudaoZhiyun } from "./youdaozhiyun";
 import { YoudaoZhiyunLLM } from "./youdaozhiyunllm";
 import { DeepLCustom } from "./deeplcustom";
 import { DeepLX } from "./deeplx";
+import { ZhipuAI } from "./zhipuai";
 
 const register: TranslateService[] = [
   Aliyun,
@@ -90,6 +91,7 @@ const register: TranslateService[] = [
   YoudaoDict,
   YoudaoZhiyun,
   YoudaoZhiyunLLM,
+  ZhipuAI,
 ];
 
 export class TranslationServices {

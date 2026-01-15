@@ -125,3 +125,15 @@ pref("__prefsPrefix__.nllb.model", "nllb-api");
 pref("__prefsPrefix__.nllb.apiendpoint", "http://localhost:7860");
 pref("__prefsPrefix__.nllb.apistream", true);
 pref("__prefsPrefix__.nllb.serveendpoint", "http://localhost:6060");
+pref(
+  "__prefsPrefix__.zhipuai.endPoint",
+  "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+);
+pref("__prefsPrefix__.zhipuai.model", "glm-4-flash");
+pref("__prefsPrefix__.zhipuai.temperature", "0.3");
+pref(
+  "__prefsPrefix__.zhipuai.prompt",
+  "As an academic expert with specialized knowledge in various fields, please provide a proficient and precise translation from ${langFrom} to ${langTo} of the academic text enclosed in 🔤. It is crucial to maintaining the original phrase or sentence and ensure accuracy while utilizing the appropriate language. The text is as follows:  🔤 ${sourceText} 🔤  Please provide the translated result without any additional explanation and remove 🔤.",
+);
+pref("__prefsPrefix__.zhipuai.maxTokens", "4000");
+pref("__prefsPrefix__.zhipuai.stream", true);
